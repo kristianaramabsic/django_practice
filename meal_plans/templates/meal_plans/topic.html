@@ -1,0 +1,15 @@
+{% extends 'meal_plans/base.html' %}
+{% block content %}
+<p>{{topic}}</p>
+<ul>
+    {% for entry in entries %}
+    <li>
+        <p>{{entry.date_added}}</p>
+        <p>{{entry.entry|linebreaks}}</p>
+    </li>
+    {% empty %}
+    <li>No entries to show</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

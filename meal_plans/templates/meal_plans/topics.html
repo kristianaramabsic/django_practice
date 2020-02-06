@@ -1,0 +1,12 @@
+{% extends 'meal_plans/base.html' %}
+{% block content %}
+<p>This is a list of your topics</p>
+<ul>
+    {% for topic in topics %}
+    <li><a href="{% url 'meal_plans:topic' topic.id %}">{{ topic }}</a></li>
+    {% empty %}
+    <li>No topics to show</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
